@@ -1,6 +1,7 @@
 FROM php:7.3-fpm
 
 RUN apt-get clean && apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y \
-    && apt-get install -y libmcrypt-dev default-mysql-client && pecl install mcrypt-1.0.2 && docker-php-ext-enable mcrypt && docker-php-ext-install pdo_mysql
+ && apt-get install -y libmcrypt-dev default-mysql-client && pecl install mcrypt-1.0.2 && docker-php-ext-enable mcrypt \
+ && docker-php-ext-install pdo_mysql
 
 WORKDIR /var/www
